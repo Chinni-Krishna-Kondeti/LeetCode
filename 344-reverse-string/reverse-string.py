@@ -3,7 +3,9 @@ class Solution:
         """
         Do not return anything, modify s in-place instead.
         """
-        n = len(s)
-        for i in range(int(n/2)):
+        n = int(len(s)/2)
+        i = 0
+        while i < n:
             s[i], s[-1-i] = s[-1-i], s[i]
+            i+=1
         
