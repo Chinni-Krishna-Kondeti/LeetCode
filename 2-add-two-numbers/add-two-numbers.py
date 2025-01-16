@@ -8,11 +8,11 @@ class Solution:
         output = ListNode()
         value = 0
         current_node = output
-        while l1 is not None or l2 is not None or value:
-            if l1 is not None:
+        while l1 or l2 or value:
+            if l1:
                 value += l1.val
                 l1 = l1.next
-            if l2 is not None:
+            if l2:
                 value += l2.val
                 l2 = l2.next
             current_node.next, value = ListNode(value%10), value//10
