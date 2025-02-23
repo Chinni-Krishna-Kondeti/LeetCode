@@ -13,7 +13,7 @@ class Solution:
                 else:
                     return [0] * n
         if index == -1:
-            for i in range(len(nums)):
+            for i in range(n):
                 nums[i] = prod // nums[i]
             return nums
         else:
