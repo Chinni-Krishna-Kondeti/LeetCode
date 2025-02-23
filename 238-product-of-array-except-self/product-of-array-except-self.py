@@ -2,16 +2,21 @@ import math
 class Solution:
     def productExceptSelf(self, nums: List[int]) -> List[int]:
         prod = 1
-        for i in nums:
-            if i != 0:
-                prod *= i
-        count = nums.count(0)
-        if count == 0:
+        index = -1
+        n = len(nums)
+        for i in range(n):
+            if nums[i] != 0:
+                prod *= nums[i]
+            else:
+                if index == -1:
+                    index = i
+                else:
+                    return [0] * n
+        if index == -1:
             for i in range(len(nums)):
                 nums[i] = prod // nums[i]
-        elif count == 1:
-            for i in range(len(nums)):
-                nums[i] = prod if nums[i] == 0 else 0
+            return nums
         else:
-            nums = [0] * len(nums)
-        return nums
+            output = [0]*n
+            output[index] = prod
+            return output
