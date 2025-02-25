@@ -6,11 +6,10 @@ class Solution:
         max_area = 0
         while i < j:
             if height[i] < height[j]:
-                a = height[i] * b
+                max_area = max(max_area, height[i] * b)
                 i += 1
             else:
-                a = height[j] * b
+                max_area = max(max_area, height[j] * b)
                 j -= 1
-            max_area = max(max_area, a)
             b -= 1
         return max_area
