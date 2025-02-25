@@ -7,8 +7,7 @@ class Solution:
         start_index = 0
         for i in range(n):
             cum_tank_diff += gas[i] - cost[i]
-            if cum_tank_diff <= 0:
+            if cum_tank_diff < 0:
                 start_index = i + 1
                 cum_tank_diff = 0
-        start_index = start_index % n
         return start_index
