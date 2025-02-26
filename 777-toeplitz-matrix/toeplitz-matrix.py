@@ -1,15 +1,14 @@
 class Solution:
-    def isToeplitzMatrix(self, matrix: List[List[int]]) -> bool:
+    def isToeplitzMatrix(self, matrix) -> bool:
+        n = len(matrix)
+        m = len(matrix[0])
         i=0
-        j=len(matrix[0])-1
-        while(i!=len(matrix)):
-            tempi = i
-            tempj = j
+        j=m-1
+        while i!=n:
             val = matrix[i][j]
-            tempj += 1
-            tempi += 1
-            while(tempj < len(matrix[0]) and tempi < len(matrix)):
-                print(tempi,tempj)
+            tempj = j+1
+            tempi = i+1
+            while tempj < m and tempi < n:
                 if matrix[tempi][tempj] != val:
                     return False
                 tempj += 1
